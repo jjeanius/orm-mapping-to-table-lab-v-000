@@ -14,7 +14,7 @@ class Student
     CREATE TABLE IF NOT EXISTS student (
       id INTEGER PRIMARY KEY,
       name TEXT,
-      grade TEXT,
+      grade TEXT
       )
       SQL
     DB[:conn].execute(sql)
@@ -26,7 +26,6 @@ class Student
         SQL
         DB[:conn].execute(sql)
     end
-
 
     def save
       sql = <<-SQL
