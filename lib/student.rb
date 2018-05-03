@@ -37,7 +37,7 @@ class Student
         VALUES (?, ?)
       SQL
 
-      DB[:conn].execute(sql, self.name, self.grade)
+      DB[:conn].execute(sql, self.name, self.id)
 
       @id = DB[:conn].execute("SELECT id FROM students")
 
