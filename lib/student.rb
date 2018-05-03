@@ -14,7 +14,7 @@ class Student
     CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY,
       name TEXT,
-      grade TEXT
+      grade INTEGER
       )
       SQL
 
@@ -33,11 +33,11 @@ class Student
 
     def save
       sql = <<-SQL
-        INSERT INTO students (name, id)
+        INSERT INTO students (name, grade)
         VALUES (?, ?)
       SQL
 
-      DB[:conn].execute(sql, self.name, self.id)
+      DB[:conn].execute(sql, self.name, self.grade)
 
       @id = DB[:conn].execute("SELECT id FROM students")
 
